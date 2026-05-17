@@ -1,0 +1,109 @@
+:root {
+    --bg: #1c1c1c;
+    --text: #ffffff;
+    --card-bg: #333333;
+    --accent: #de5833;
+    --adblock-color: #ff4444;
+}
+
+body.duck-theme {
+    --bg: #fafafa;
+    --text: #333333;
+    --card-bg: #eeeeee;
+    --accent: #de5833;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    transition: 0.3s;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Ad Blocker UI */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 25px;
+}
+
+#adblock-container {
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #333;
+    border: 1px solid var(--adblock-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.adblock-on { --adblock-color: #00c851; box-shadow: 0 0 10px rgba(0,200,81,0.3); }
+.adblock-off { --adblock-color: #ff4444; }
+
+/* Main UI */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.duck-logo { width: 140px; margin-bottom: 10px; }
+
+.search-bar {
+    background: #333;
+    width: 550px;
+    padding: 8px 20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #444;
+}
+
+body.duck-theme .search-bar { background: white; border: 1px solid #ccc; }
+
+input {
+    background: transparent;
+    border: none;
+    color: var(--text);
+    flex: 1;
+    font-size: 18px;
+    outline: none;
+}
+
+/* Site Grid */
+.grid-container { width: 600px; margin-top: 40px; }
+.grid-header { display: flex; justify-content: space-between; margin-bottom: 15px; opacity: 0.8; }
+
+.site-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.site-item { text-align: center; cursor: pointer; transition: 0.2s; }
+.site-item:hover { transform: translateY(-3px); }
+
+.icon-box {
+    background: var(--card-bg);
+    width: 65px;
+    height: 65px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin: 0 auto 8px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: #222; padding: 30px; border-radius: 15px; border: 2px solid var(--accent);
+}
+
+.bottom-controls { position: fixed; bottom: 20px; right: 20px; }
+button { cursor: pointer; }
