@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VMINawebsite | Browser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="main-body">
+
+    <div class="top-nav">
+        <div class="nav-left">
+            <button class="nav-btn" onclick="createNewFile()">➕ New File</button>
+        </div>
+        <div class="nav-right">
+            <div id="adblock-container" class="adblock-off" onclick="toggleAdBlock()">
+                <span id="adblock-icon">🛡️</span>
+                <span id="adblock-status">Off</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="logo-section">
+            <img src="https://duckduckgo.com/assets/logo_homepage.normal.v108.svg" alt="Duck Logo" class="duck-logo">
+            <h1 id="site-title">VMINawebsite</h1>
+        </div>
+
+        <div class="search-wrapper">
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search the web without being tracked">
+                <button class="search-go" onclick="handleSearch()">🔍</button>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-header">
+                <span>⭐ My Frequently Used</span>
+                <button class="collapse-btn" onclick="toggleGrid()">^</button>
+            </div>
+            <div id="user-grid" class="site-grid">
+                </div>
+        </div>
+    </div>
+
+    <div class="bottom-controls">
+        <button class="customize-btn" onclick="openSettings()">⚙️ Customize</button>
+    </div>
+
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <h3>Customize VMIN</h3>
+            <div class="option-group">
+                <button onclick="setTheme('dark')">Dark Mode</button>
+                <button onclick="setTheme('duck')">Duck Theme</button>
+            </div>
+            <div class="option-group">
+                <p>Font Style:</p>
+                <button onclick="setFont('sans-serif')">Modern</button>
+                <button onclick="setFont('Comic Sans MS')">Duck Style</button>
+            </div>
+            <button class="close-btn" onclick="closeSettings()">Save & Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
